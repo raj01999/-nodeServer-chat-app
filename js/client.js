@@ -35,6 +35,7 @@ form.addEventListener("submit", (e) => {
   socket.emit("send", message);
   messageInput.value = "";
   messageContainer.scrollTop = messageContainer.scrollHeight;
+  messageInput.focus();
 });
 
 const name = prompt("Enter your name plz! Must be over 3 charecter.");
