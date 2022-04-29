@@ -41,13 +41,18 @@ const append = (message, position, color) => {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const message = messageInput.value;
-  if (!message) return;
-  append(`You : ${message}`, "right", "normal");
-  socket.emit("send", message);
-  messageInput.value = "";
-  messageContainer.scrollTop = messageContainer.scrollHeight;
-  messageInput.focus();
+  if (socket.id) {
+    const message = messageInput.value;
+    if (!message) return;
+    append(`You: ${message}`, "right", "normal");
+    socket.emit("send", message);
+    messageInput.value = "";
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+    messageInput.focus();
+  } else {
+    fullApp.style.display = "none";
+    nameApp.style.display = "block";
+  }
 });
 
 nameForm.addEventListener("submit", (e) => {
@@ -70,7 +75,7 @@ socket.on("user-joined", (name) => {
 });
 
 socket.on("receive", (data) => {
-  append(`${data.name} : ${data.message}`, "left", "normal");
+  append(`${data.name}: ${data.message}`, "left", "normal");
 });
 
 socket.on("left", (name) => {

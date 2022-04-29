@@ -143,8 +143,9 @@ body {
     rgb(112, 211, 250)
   );
   font-weight: bold;
-  width: 96%;
+  width: 95%;
   text-align: center;
+  margin: 5px 2.5%;
 }
 
 .hate {
@@ -154,8 +155,9 @@ body {
     rgb(112, 211, 250)
   );
   font-weight: bold;
-  width: 96%;
+  width: 95%;
   text-align: center;
+  margin: 5px 2.5%;
 }
 
 .normal {
@@ -195,6 +197,14 @@ body {
     margin: 5px 15px;
   }
 
+  .love {
+    margin: 5px 2.5%;
+  }
+
+  .hate {
+    margin: 5px 2.5%;
+  }
+
   .head {
     width: 85vw;
     display: flex;
@@ -223,6 +233,14 @@ body {
 
   .message {
     margin: 5px 10px;
+  }
+
+  .love {
+    margin: 5px 2.5%;
+  }
+
+  .hate {
+    margin: 5px 2.5%;
   }
 
   .head {
