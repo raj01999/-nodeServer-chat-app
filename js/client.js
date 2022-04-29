@@ -42,7 +42,7 @@ const name = prompt("Enter your name plz! Must be over 3 charecter.");
 if (name && name.length >= 3) {
   socket.emit("new-user-joined", name);
 } else {
-  location.href = "./-nodeServer-chat-app";
+  location.href = "./";
 }
 
 socket.on("user-joined", (name) => {
