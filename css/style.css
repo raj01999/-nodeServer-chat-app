@@ -56,7 +56,7 @@ body {
 .send {
   position: relative;
   top: 50px;
-  height: 35px;
+  height: 45px;
   width: 75vw;
   margin: auto;
 }
@@ -64,8 +64,8 @@ body {
 .name-send {
   position: relative;
   top: 20vh;
-  height: 50px;
-  width: 80vw;
+  height: 60px;
+  width: 90vw;
   margin: auto;
   font-weight: bolder;
 }
@@ -86,8 +86,8 @@ body {
   border: none;
   outline: none;
   height: 100%;
-  width: 84%;
-  padding: 5px;
+  width: 80%;
+  padding: 10px;
   border-radius: 3px;
   background-image: linear-gradient(
     to bottom right,
@@ -100,8 +100,8 @@ body {
   border: none;
   outline: none;
   height: 100%;
-  width: 80%;
-  padding: 5px;
+  width: 70%;
+  padding: 10px;
   border-radius: 3px;
   background-image: linear-gradient(
     to bottom right,
@@ -113,7 +113,7 @@ body {
 #send-container button {
   border: none;
   outline: none;
-  width: 15%;
+  width: 19%;
   cursor: pointer;
   border-radius: 5px;
   background-image: linear-gradient(
@@ -126,7 +126,7 @@ body {
 #name-container button {
   border: none;
   outline: none;
-  width: 19%;
+  width: 29%;
   cursor: pointer;
   border-radius: 5px;
   background-image: linear-gradient(
