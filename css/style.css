@@ -9,6 +9,10 @@ body {
   height: 100vh;
 }
 
+#full-app {
+  display: none;
+}
+
 .logo {
   width: 40px;
 }
@@ -57,7 +61,22 @@ body {
   margin: auto;
 }
 
+.name-send {
+  position: relative;
+  top: 20vh;
+  height: 50px;
+  width: 80vw;
+  margin: auto;
+  font-weight: bolder;
+}
+
 #send-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#name-container {
   display: flex;
   justify-content: space-between;
   height: 100%;
@@ -77,10 +96,37 @@ body {
   );
 }
 
+#nameInp {
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 80%;
+  padding: 5px;
+  border-radius: 3px;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(181, 255, 196),
+    rgb(255, 182, 204)
+  );
+}
+
 #send-container button {
   border: none;
   outline: none;
   width: 15%;
+  cursor: pointer;
+  border-radius: 5px;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(88, 255, 122),
+    rgb(255, 73, 128)
+  );
+}
+
+#name-container button {
+  border: none;
+  outline: none;
+  width: 19%;
   cursor: pointer;
   border-radius: 5px;
   background-image: linear-gradient(

@@ -13,28 +13,52 @@
     <title>Raj Chat Socket.io</title>
   </head>
   <body>
-    <div class="message love head">
-      <img src="./assets/Flat-logo-WhatsApp-PNG.png" class="logo" alt="logo" />
-      <p>Your message goes in here</p>
-      <img src="./assets/Flat-logo-WhatsApp-PNG.png" class="logo" alt="logo" />
-    </div>
-
-    <div class="container">
-      <div class="message left normal">ChatBot : Welcome to the chat</div>
-    </div>
-
-    <div class="send">
-      <form action="" id="send-container" autocomplete="off">
+    <div class="name-send" id="name-app">
+      <form action="" id="name-container" autocomplete="off">
         <input
           type="text"
           name="messageInp"
-          id="messageInp"
-          placeholder="Input your message here"
+          id="nameInp"
+          placeholder="What is your name? "
           autocomplete="off"
         />
-        <button type="submit">Send</button>
+        <button type="submit">Start</button>
       </form>
     </div>
+
+    <div id="full-app">
+      <div class="message love head">
+        <img
+          src="./assets/Flat-logo-WhatsApp-PNG.png"
+          class="logo"
+          alt="logo"
+        />
+        <p>Your message goes in here</p>
+        <img
+          src="./assets/Flat-logo-WhatsApp-PNG.png"
+          class="logo"
+          alt="logo"
+        />
+      </div>
+
+      <div class="container">
+        <div class="message left normal">ChatBot : Welcome to the chat</div>
+      </div>
+
+      <div class="send">
+        <form action="" id="send-container" autocomplete="off">
+          <input
+            type="text"
+            name="messageInp"
+            id="messageInp"
+            placeholder="Input your message here"
+            autocomplete="off"
+          />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
     <script
       defer
       src="https://nodeserver-chat-app.herokuapp.com/socket.io/socket.io.js"

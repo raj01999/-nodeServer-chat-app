@@ -6,12 +6,24 @@ const messageInput = document.getElementById("messageInp");
 
 const messageContainer = document.querySelector(".container");
 
+const fullApp = document.getElementById("full-app");
+
+const nameApp = document.getElementById("name-app");
+
+const nameForm = document.getElementById("name-container");
+
+const nameInp = document.getElementById("nameInp");
+
 const audio = new Audio("./assets/noti.mp3");
 
 const html = document.getElementsByTagName("html")[0];
 
+messageInput.focus();
+nameInp.focus();
+
 html.addEventListener("keypress", () => {
   messageInput.focus();
+  nameInp.focus();
 });
 
 const append = (message, position, color) => {
@@ -38,13 +50,20 @@ form.addEventListener("submit", (e) => {
   messageInput.focus();
 });
 
-const name = prompt("Enter your name plz! Must be over 3 charecter.");
+nameForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = nameInp.value;
 
-if (name && name.length >= 3) {
-  socket.emit("new-user-joined", name);
-} else {
-  location.href = "./";
-}
+  if (name && name.length >= 3) {
+    nameApp.style.display = "none";
+    fullApp.style.display = "block";
+    socket.emit("new-user-joined", name);
+  } else {
+    fullApp.style.display = "none";
+    nameApp.style.display = "block";
+    alert("Please give over 3 charecter Name");
+  }
+});
 
 socket.on("user-joined", (name) => {
   append(`${name} join the chat`, "left", "love");
