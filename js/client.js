@@ -41,18 +41,13 @@ const append = (message, position, color) => {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (socket.id) {
-    const message = messageInput.value;
-    if (!message) return;
-    append(`You: ${message}`, "right", "normal");
-    socket.emit("send", message);
-    messageInput.value = "";
-    messageContainer.scrollTop = messageContainer.scrollHeight;
-    messageInput.focus();
-  } else {
-    fullApp.style.display = "none";
-    nameApp.style.display = "block";
-  }
+  const message = messageInput.value;
+  if (!message) return;
+  socket.emit("send", message);
+  append(`You: ${message}`, "right", "normal");
+  messageInput.value = "";
+  messageContainer.scrollTop = messageContainer.scrollHeight;
+  messageInput.focus();
 });
 
 nameForm.addEventListener("submit", (e) => {
@@ -80,4 +75,9 @@ socket.on("receive", (data) => {
 
 socket.on("left", (name) => {
   append(`${name} left the chat`, "left", "hate");
+});
+
+socket.on("no-user", (msg) => {
+  fullApp.style.display = "none";
+  nameApp.style.display = "block";
 });
