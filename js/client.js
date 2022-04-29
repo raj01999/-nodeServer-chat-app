@@ -6,7 +6,7 @@ const messageInput = document.getElementById("messageInp");
 
 const messageContainer = document.querySelector(".container");
 
-const audio = new Audio("./assets/noti.wav");
+const audio = new Audio("./assets/noti.mp3");
 
 const html = document.getElementsByTagName("html")[0];
 
