@@ -113,6 +113,7 @@ body {
   min-height: 3rem;
   background-color: green;
   display: flex;
+  border-radius: 8px;
 }
 
 #msg-input {
@@ -139,6 +140,7 @@ body {
     rgb(88, 255, 122),
     rgb(255, 73, 128)
   );
+  border-radius: 8px;
 }
 
 .msg {
