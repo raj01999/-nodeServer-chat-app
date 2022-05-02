@@ -18,6 +18,8 @@ if (name && name.length >= 3) {
     name: name,
     time: String(new Date()).split(" ")[4],
   });
+} else {
+  location.href = "./";
 }
 
 const append = (msg, pos, type) => {
@@ -38,7 +40,6 @@ form.addEventListener("submit", (e) => {
   const msg = input.value;
   if (!msg) return;
   socket.emit("msg-send", msg);
-  append(`You: ${msg} ~${String(new Date()).split(" ")[4]}`, "right", "msg");
   input.value = "";
   input.focus();
 });
@@ -70,12 +71,16 @@ socket.on("user-join", (obj) => {
   }
 });
 
-socket.on("no-user", (users) => {
-  if (checker(users)) {
-    appendUser(users);
-  } else {
-    location.href = "./";
-  }
+socket.on("append-user", (users) => {
+  appendUser(users);
+});
+
+socket.on("msg-permission", (msg) => {
+  append(`You: ${msg} ~${String(new Date()).split(" ")[4]}`, "right", "msg");
+});
+
+socket.on("no-user", (vari) => {
+  location.href = "./";
 });
 
 socket.on("left", (obj) => {
