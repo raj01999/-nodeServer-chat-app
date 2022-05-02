@@ -76,7 +76,7 @@ socket.on("append-user", (users) => {
 });
 
 socket.on("msg-permission", (msg) => {
-  append(`You: ${msg} ~${String(new Date()).split(" ")[4]}`, "right", "msg");
+  append(`You:~ ${msg}`, "right", "msg");
 });
 
 socket.on("no-user", (vari) => {
@@ -94,11 +94,7 @@ socket.on("left", (obj) => {
 
 socket.on("msg-receive", (obj) => {
   if (checker(obj.users)) {
-    append(
-      `${obj.name}: ${obj.msg} ~${String(new Date()).split(" ")[4]}`,
-      "left",
-      "msg"
-    );
+    append(`${obj.name}:~ ${obj.msg}`, "left", "msg");
   } else {
     location.href = "./";
   }
