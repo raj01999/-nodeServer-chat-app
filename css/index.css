@@ -191,6 +191,7 @@ body {
 @media screen and (max-width: 720px) {
   .container {
     width: 98%;
+    height: 87vh;
   }
 
   .left-side-aside {
