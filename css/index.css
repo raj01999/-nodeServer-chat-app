@@ -127,6 +127,7 @@ body {
     rgb(181, 255, 196),
     rgb(255, 182, 204)
   );
+  border-radius: 8px;
 }
 
 #msg-submit {
