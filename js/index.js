@@ -12,16 +12,6 @@ html.addEventListener("keypress", () => {
   input.focus();
 });
 
-const name = prompt("Please! Enter your name over 3 character...");
-if (name && name.length >= 3) {
-  socket.emit("new-user-join", {
-    name: name,
-    time: String(new Date()).split(" ")[4],
-  });
-} else {
-  location.href = "./";
-}
-
 const append = (msg, pos, type) => {
   const ele = document.createElement("p");
   ele.innerText = msg;
@@ -34,6 +24,16 @@ const append = (msg, pos, type) => {
     audio.play();
   }
 };
+
+const name = prompt("Please! Enter your name over 3 character...");
+if (name && name.length >= 3) {
+  socket.emit("new-user-join", {
+    name: name,
+    time: String(new Date()).split(" ")[4],
+  });
+} else {
+  append(`~ Name should be more than 3 character ~`, "left", "hate");
+}
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
